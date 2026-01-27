@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://m0nm8d84q8hd"]
+
+[ext_resource type="PackedScene" uid="uid://djebtvamj38xb" path="res://Escenas/cajaTexto.tscn" id="1_peb2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0jut"]
+bg_color = Color(0.80696785, 0.03709064, 0.26275864, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Interfaz" type="Control" unique_id=1421040145]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margen" type="MarginContainer" parent="." unique_id=1283232220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 16
+
+[node name="Vida" type="HBoxContainer" parent="Margen" unique_id=54540971]
+process_mode = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="Unidad" type="Panel" parent="Margen/Vida" unique_id=257787820]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
+
+[node name="Unidad2" type="Panel" parent="Margen/Vida" unique_id=42642028]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
+
+[node name="Unidad3" type="Panel" parent="Margen/Vida" unique_id=1015876561]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
+
+[node name="CajaTexto" parent="Margen" unique_id=1721420466 instance=ExtResource("1_peb2f")]
+layout_mode = 2

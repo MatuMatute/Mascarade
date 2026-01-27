@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://djebtvamj38xb"]
+
+[ext_resource type="Script" uid="uid://clwcb4jdchw58" path="res://Código/CajaTexto.cs" id="1_5yuos"]
+[ext_resource type="FontFile" uid="uid://cbiwnfh5dfk1m" path="res://Visual/Fuentes de Letras/RougeScript-Regular.ttf" id="1_jot03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jot03"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_5yuos"]
+font = ExtResource("1_jot03")
+font_size = 32
+
+[node name="CajaTexto" type="PanelContainer" unique_id=1721420466 node_paths=PackedStringArray("Texto")]
+process_mode = 1
+custom_minimum_size = Vector2(640, 128)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_jot03")
+script = ExtResource("1_5yuos")
+Texto = NodePath("Margen/Texto")
+
+[node name="Margen" type="MarginContainer" parent="." unique_id=957429345]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Texto" type="Label" parent="Margen" unique_id=1056684955]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Buenas noches"
+label_settings = SubResource("LabelSettings_5yuos")

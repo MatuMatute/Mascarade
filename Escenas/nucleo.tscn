@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3xwyehh4eai4"]
+
+[ext_resource type="PackedScene" uid="uid://cmqulm8hreas7" path="res://Escenas/plaza.tscn" id="1_wxiso"]
+[ext_resource type="PackedScene" uid="uid://m0nm8d84q8hd" path="res://Escenas/Interfaz.tscn" id="2_xlqvp"]
+
+[node name="Nucleo" type="Node" unique_id=1434758411]
+auto_translate_mode = 1
+
+[node name="Plaza" parent="." unique_id=499909915 instance=ExtResource("1_wxiso")]
+process_mode = 1
+
+[node name="CapaLienzo" type="CanvasLayer" parent="." unique_id=19245121]
+
+[node name="Interfaz" parent="CapaLienzo" unique_id=1421040145 instance=ExtResource("2_xlqvp")]

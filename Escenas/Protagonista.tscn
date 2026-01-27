@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://x0dm0pnguby"]
+
+[ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_t0ve2"]
+[ext_resource type="Script" uid="uid://c1qxreeaslvt2" path="res://Código/Protagonista.cs" id="2_ti2e3"]
+[ext_resource type="PackedScene" uid="uid://bi7kcxh868vg0" path="res://Escenas/Mazo.tscn" id="3_rdtc7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0ve2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t0ve2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdtc7"]
+radius = 31.0
+height = 98.0
+
+[node name="Protagonista" type="CharacterBody2D" unique_id=1251422844 node_paths=PackedStringArray("Mazo")]
+process_mode = 1
+collision_mask = 13
+script = ExtResource("2_ti2e3")
+Mazo = NodePath("Mazo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=638420846]
+scale = Vector2(0.5, 0.765625)
+sprite_frames = SubResource("SpriteFrames_t0ve2")
+animation = &"idle"
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=972059325]
+shape = SubResource("CapsuleShape2D_rdtc7")
+
+[node name="Mazo" parent="." unique_id=562676939 instance=ExtResource("3_rdtc7")]
