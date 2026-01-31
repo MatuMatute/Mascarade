@@ -111,9 +111,9 @@ public partial class Fuente : Lugar
 		CajaTexto.AgregarDialogo(DialogosCinematica[14]);
 		await ToSignal(CajaTexto, "DialogoFinalizado");
 		Presentador.QueueFree();
-		Camara.Set("position", Protagonista.Get("position"));
 		Camara.Reparent(Protagonista);
 		Camara.Set("position", Vector2.Zero);
+		await ToSignal(GetTree().CreateTimer(0.5), "timeout");
 		Protagonista.HabilitarMovimiento();
 		Camara.Set("position_smoothing_enabled", true);
 		GetParent<Nucleo>().Controles();

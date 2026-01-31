@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://x0dm0pnguby"]
 
-[ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_t0ve2"]
 [ext_resource type="Texture2D" uid="uid://c2eiakkpdyr50" path="res://Visual/Revisar.png" id="2_rdtc7"]
 [ext_resource type="Texture2D" uid="uid://cvrnh46xunmb5" path="res://Visual/AbrirPuerta.png" id="2_rlqnq"]
 [ext_resource type="Script" uid="uid://c1qxreeaslvt2" path="res://Código/Protagonista.cs" id="2_ti2e3"]
 [ext_resource type="Texture2D" uid="uid://dka4onmexefld" path="res://Visual/ProtagonistaAbajo.png" id="4_0uvs4"]
 [ext_resource type="Texture2D" uid="uid://b4643dxc3s635" path="res://Visual/ProtagonistaArriba.png" id="5_6nslp"]
+[ext_resource type="Texture2D" uid="uid://c0rum15hk6smb" path="res://Visual/ProtagonistaDerecha.png" id="6_umu7j"]
+[ext_resource type="Texture2D" uid="uid://clodf8uxdmrmn" path="res://Visual/ProtagonistaIzquierda.png" id="7_c68x5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rlqnq"]
 animations = [{
@@ -54,6 +55,22 @@ region = Rect2(480, 0, 240, 192)
 atlas = ExtResource("5_6nslp")
 region = Rect2(720, 0, 240, 192)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rawno"]
+atlas = ExtResource("6_umu7j")
+region = Rect2(240, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxf12"]
+atlas = ExtResource("6_umu7j")
+region = Rect2(0, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3yem"]
+atlas = ExtResource("7_c68x5")
+region = Rect2(240, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfpfd"]
+atlas = ExtResource("7_c68x5")
+region = Rect2(0, 0, 240, 192)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_t0ve2"]
 animations = [{
 "frames": [{
@@ -89,7 +106,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_t0ve2")
+"texture": SubResource("AtlasTexture_rawno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxf12")
 }],
 "loop": true,
 "name": &"Derecha",
@@ -97,7 +117,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_t0ve2")
+"texture": SubResource("AtlasTexture_r3yem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfpfd")
 }],
 "loop": true,
 "name": &"Izquierda",
@@ -108,12 +131,13 @@ animations = [{
 radius = 24.0
 height = 112.0
 
-[node name="Protagonista" type="CharacterBody2D" unique_id=1251422844 node_paths=PackedStringArray("Sprite", "IconoInteraccion")]
+[node name="Protagonista" type="CharacterBody2D" unique_id=1251422844 node_paths=PackedStringArray("Sprite", "IconoInteraccion", "TiempoInvencibilidad")]
 process_mode = 1
 collision_mask = 13
 script = ExtResource("2_ti2e3")
 Sprite = NodePath("Sprite")
 IconoInteraccion = NodePath("Interaccion")
+TiempoInvencibilidad = NodePath("Invencibilidad")
 metadata/_edit_horizontal_guides_ = [-146.0]
 
 [node name="Interaccion" type="AnimatedSprite2D" parent="." unique_id=2045506282]
@@ -125,9 +149,12 @@ animation = &"Revisar"
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=638420846]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_t0ve2")
-animation = &"Arriba"
-frame_progress = 0.4632462
+animation = &"Izquierda"
+frame_progress = 0.4788165
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=972059325]
 position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_rdtc7")
+
+[node name="Invencibilidad" type="Timer" parent="." unique_id=1741414429]
+wait_time = 5.0

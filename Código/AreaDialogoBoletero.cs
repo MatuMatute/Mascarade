@@ -14,6 +14,7 @@ public partial class AreaDialogoBoletero : AreaInteractuable
 		"Estoy solo, ¡te molesta quedarte hasta que vuelva?",
 		"Dale, no hay problema."
 	];
+	
 	public override void _Ready()
 	{
 		base._Ready();

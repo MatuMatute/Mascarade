@@ -1,5 +1,3 @@
-using System;
-using System.Xml.Serialization;
 using Godot;
 
 public partial class Protagonista : CharacterBody2D
@@ -8,6 +6,8 @@ public partial class Protagonista : CharacterBody2D
 	private AnimatedSprite2D Sprite;
 	[Export]
 	private AnimatedSprite2D IconoInteraccion;
+	[Export]
+	private Timer TiempoInvencibilidad;
 	private const int VELOCIDAD = 300;
 	private bool PoderCaminar;
 
@@ -22,20 +22,6 @@ public partial class Protagonista : CharacterBody2D
 		Movimiento(delta);
         MoveAndSlide();
 	}
-
-    public override void _Input(InputEvent @event)
-    {
-		if (PoderCaminar)
-		{
-			if (Input.IsActionJustPressed("ui_up"))
-				Sprite.Play("Arriba");
-			if (Input.IsActionJustPressed("ui_down"))
-				Sprite.Play("Abajo");
-
-			if (Input.IsActionJustReleased("ui_up") || Input.IsActionJustReleased("ui_left") || Input.IsActionJustReleased("ui_right") || Input.IsActionJustReleased("ui_down"))
-				Sprite.Stop();
-		}
-    }
 
 	public void TweenMovimientoAutomatico(Vector2 PosicionFinal, float Tiempo)
 	{
@@ -84,6 +70,21 @@ public partial class Protagonista : CharacterBody2D
 		
 			Velocity = Velocity.Normalized() * VELOCIDAD;
 
+			if (Velocity.X > 0.0f && Velocity.Y == 0.0f)
+				Sprite.Play("Derecha");
+			if (Velocity.X < 0.0f && Velocity.Y == 0.0f)
+				Sprite.Play("Izquierda");
+			if (Velocity.Y > 0.0f && Velocity.X == 0.0f)
+				Sprite.Play("Abajo");
+			if (Velocity.Y < 0.0f && Velocity.X == 0.0f)
+				Sprite.Play("Arriba");
+			if (Velocity.X != 0.0f && Velocity.Y > 0.0f)
+				Sprite.Play("Abajo");
+			if (Velocity.X != 0.0f && Velocity.Y < 0.0f)
+				Sprite.Play("Arriba");
+			if (Velocity == Vector2.Zero)
+				Sprite.Stop();
+			
         	Position += Velocity * (float)delta;
 		}
 	}

@@ -49,6 +49,11 @@ public partial class Nucleo : Node
 		Interfaz.MostrarControles();
 	}
 
+	public void Vidas()
+	{
+		Interfaz.MostrarVidas();
+	}
+
 	private void IniciarPartida()
 	{
 		GetTree().Paused = false;

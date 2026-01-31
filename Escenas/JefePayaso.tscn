@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://hnjmjtlg7jj3"]
+
+[ext_resource type="Script" uid="uid://cvu7y1qkoyitf" path="res://Código/JefePayaso.cs" id="1_5e6ty"]
+[ext_resource type="Texture2D" uid="uid://6vmcffhrra87" path="res://Visual/PayasoJefe.png" id="1_rx2ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e6ty"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(650, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uinpg"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(1300, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef270"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(1950, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jefb4"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(2600, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbalb"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(3250, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsu67"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(3900, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np8tv"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(4550, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn4cl"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(0, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr2rr"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(0, 0, 650, 529)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lrlx"]
+atlas = ExtResource("1_rx2ni")
+region = Rect2(650, 0, 650, 529)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4wy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e6ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uinpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef270")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jefb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbalb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsu67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np8tv")
+}],
+"loop": true,
+"name": &"PreparandoAtaque",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn4cl")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr2rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lrlx")
+}],
+"loop": true,
+"name": &"Riendose",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx2ni"]
+size = Vector2(576, 344)
+
+[node name="JefePayaso" type="Area2D" unique_id=2111886217]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5e6ty")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=83855173]
+position = Vector2(24, 0)
+sprite_frames = SubResource("SpriteFrames_c4wy7")
+animation = &"Riendose"
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=62785354]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_rx2ni")

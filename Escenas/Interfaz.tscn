@@ -271,7 +271,7 @@ _data = {
 &"transicionJuego": SubResource("Animation_cm7ul")
 }
 
-[node name="Interfaz" type="Control" unique_id=1421040145 node_paths=PackedStringArray("Animaciones", "CajaTexto", "Pausa", "Transicion", "Controles", "TemporizadorControles")]
+[node name="Interfaz" type="Control" unique_id=1421040145 node_paths=PackedStringArray("Animaciones", "CajaTexto", "Pausa", "Transicion", "Controles", "TemporizadorControles", "ContenedorVidas", "Creditos", "MenuPrincipal")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -286,6 +286,9 @@ Pausa = NodePath("Pausa")
 Transicion = NodePath("Transición")
 Controles = NodePath("MargenJuego/Controles")
 TemporizadorControles = NodePath("MargenJuego/Controles/Temporizador")
+ContenedorVidas = NodePath("MargenJuego/Vida")
+Creditos = NodePath("Creditos")
+MenuPrincipal = NodePath("MenuPrincipal")
 
 [node name="MargenJuego" type="MarginContainer" parent="." unique_id=1283232220]
 process_mode = 1
@@ -309,17 +312,17 @@ size_flags_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="Unidad" type="Panel" parent="MargenJuego/Vida" unique_id=257787820]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
 [node name="Unidad2" type="Panel" parent="MargenJuego/Vida" unique_id=42642028]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
 [node name="Unidad3" type="Panel" parent="MargenJuego/Vida" unique_id=1015876561]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
@@ -395,6 +398,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Equipo" type="TextureRect" parent="." unique_id=1024840643]
 process_mode = 2
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -440,13 +444,13 @@ theme_override_fonts/font = ExtResource("2_cswj6")
 theme_override_font_sizes/font_size = 64
 text = "Jugar"
 
-[node name="Opciones" type="Button" parent="MenuPrincipal" unique_id=1998161361]
+[node name="Creditos" type="Button" parent="MenuPrincipal" unique_id=1998161361]
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_cswj6")
 theme_override_font_sizes/font_size = 64
-text = "Opciones"
+text = "Créditos"
 
 [node name="Salir" type="Button" parent="MenuPrincipal" unique_id=1834730908]
 custom_minimum_size = Vector2(192, 0)
@@ -533,6 +537,40 @@ horizontal_alignment = 1
 [node name="SliderVolGeneral" type="HSlider" parent="Opciones" unique_id=1572727946]
 layout_mode = 2
 
+[node name="Creditos" type="VBoxContainer" parent="." unique_id=2020956255]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Descripcion" type="Label" parent="Creditos" unique_id=2036424243]
+layout_mode = 2
+text = "Somos Team Rosa Azul
+Arte 2D y Narrativa - Rocío Grudzien
+Arte 2D, Animación y Game Design - Florencia Juarez
+Programación y Game Design - Matías Nahuel González Sandoval
+Fuente de letra utilizada: Rouge Script"
+label_settings = ExtResource("3_wlqyy")
+horizontal_alignment = 1
+
+[node name="Volver" type="Button" parent="Creditos" unique_id=871956772]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Volver"
+
 [node name="Version" type="Label" parent="." unique_id=1115025975]
 process_mode = 2
 layout_mode = 1
@@ -545,7 +583,7 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "0.3.3-máscara"
+text = "0.3.5-máscara"
 
 [node name="Animaciones" type="AnimationPlayer" parent="." unique_id=380158101]
 process_mode = 3
@@ -553,7 +591,9 @@ libraries/ = SubResource("AnimationLibrary_cm7ul")
 
 [connection signal="timeout" from="MargenJuego/Controles/Temporizador" to="." method="EsconderControles"]
 [connection signal="pressed" from="MenuPrincipal/Jugar" to="." method="JugarPresionado"]
+[connection signal="pressed" from="MenuPrincipal/Creditos" to="." method="MostrarCreditos"]
 [connection signal="pressed" from="MenuPrincipal/Salir" to="MenuPrincipal/Salir" method="Presionado"]
 [connection signal="pressed" from="Pausa/Reanudar" to="." method="Reanudar"]
 [connection signal="pressed" from="Pausa/Salir" to="Pausa/Salir" method="Presionado"]
+[connection signal="pressed" from="Creditos/Volver" to="." method="VolverMenuPrincipal"]
 [connection signal="animation_finished" from="Animaciones" to="." method="AnimacionHaFinalizado"]

@@ -7,5 +7,6 @@ public partial class InteriorCarpa : Lugar
 		Camara.Reparent(Protagonista);
 		Camara.Set("position", Vector2.Zero);
 		Protagonista.Reparent(this);
+		GetParent<Nucleo>().Vidas();
 	}
 }

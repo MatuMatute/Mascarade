@@ -16,6 +16,12 @@ public partial class Interfaz : Control
 	private Control Controles;
 	[Export]
 	private Timer TemporizadorControles;
+	[Export]
+	private HBoxContainer ContenedorVidas;
+	[Export]
+	private VBoxContainer Creditos;
+	[Export]
+	private VBoxContainer MenuPrincipal;
 
 	public override void _Ready()
 	{
@@ -47,7 +53,24 @@ public partial class Interfaz : Control
 		TemporizadorControles.Start();
 	}
 
+	public void MostrarVidas()
+	{
+		ContenedorVidas.Show();
+	}
+
 	private void EsconderControles() { Controles.Hide(); }
+
+	private void MostrarCreditos()
+	{
+		MenuPrincipal.Hide();
+		Creditos.Show();
+	}
+
+	private void VolverMenuPrincipal()
+	{
+		Creditos.Hide();
+		MenuPrincipal.Show();
+	}
 		
 	public CajaTexto GetCajaTexto() {return CajaTexto;}
 
