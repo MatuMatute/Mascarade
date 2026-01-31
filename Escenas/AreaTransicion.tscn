@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5y5bl84kifcc"]
+
+[ext_resource type="Script" uid="uid://c5euuoobw4lar" path="res://Código/AreaTransicion.cs" id="1_1jdab"]
+
+[node name="AreaTransicion" type="Area2D" unique_id=1244926905]
+script = ExtResource("1_1jdab")
+ZonaObjetivo = null
+PosicionJugador = null
+
+[connection signal="body_entered" from="." to="." method="EntradaEntidad"]

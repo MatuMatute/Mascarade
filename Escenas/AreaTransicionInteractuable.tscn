@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d4dm6gkc1qdrr"]
+
+[ext_resource type="Script" uid="uid://bkohhkrexdpah" path="res://Código/AreaTransicionInteractuable.cs" id="1_8mehq"]
+
+[node name="AreaTransicionInteractuable" type="Area2D" unique_id=667577467]
+script = ExtResource("1_8mehq")
+
+[connection signal="body_entered" from="." to="." method="EntradaEntidad"]
+[connection signal="body_exited" from="." to="." method="SalidaEntidad"]

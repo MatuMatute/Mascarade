@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clwcb4jdchw58" path="res://Código/CajaTexto.cs" id="1_5yuos"]
 [ext_resource type="FontFile" uid="uid://cbiwnfh5dfk1m" path="res://Visual/Fuentes de Letras/RougeScript-Regular.ttf" id="1_jot03"]
+[ext_resource type="Texture2D" uid="uid://cfylw6sf63jfh" path="res://Visual/MouseClicIzquierdo.png" id="3_2axyr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jot03"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,14 +15,15 @@ corner_radius_bottom_left = 8
 font = ExtResource("1_jot03")
 font_size = 32
 
-[node name="CajaTexto" type="PanelContainer" unique_id=1721420466 node_paths=PackedStringArray("Texto")]
+[node name="CajaTexto" type="PanelContainer" unique_id=1721420466 node_paths=PackedStringArray("Texto", "Mouse")]
 process_mode = 1
-custom_minimum_size = Vector2(640, 128)
+custom_minimum_size = Vector2(640, 136)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_jot03")
 script = ExtResource("1_5yuos")
 Texto = NodePath("Margen/Texto")
+Mouse = NodePath("Margen/Mouse")
 
 [node name="Margen" type="MarginContainer" parent="." unique_id=957429345]
 layout_mode = 2
@@ -31,7 +33,19 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="Texto" type="Label" parent="Margen" unique_id=1056684955]
+custom_minimum_size = Vector2(624, 120)
 layout_mode = 2
 size_flags_vertical = 1
-text = "Buenas noches"
 label_settings = SubResource("LabelSettings_5yuos")
+autowrap_mode = 3
+text_overrun_behavior = 2
+visible_characters_behavior = 1
+
+[node name="Mouse" type="TextureRect" parent="Margen" unique_id=1756228872]
+visible = false
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("3_2axyr")
+stretch_mode = 2

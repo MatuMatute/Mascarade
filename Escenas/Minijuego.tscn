@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://blxaua3ik6yea"]
+
+[ext_resource type="PackedScene" uid="uid://btwff218p4pl4" path="res://Escenas/Cerradura.tscn" id="1_ldoax"]
+[ext_resource type="Script" uid="uid://buxo5mrllxfl3" path="res://Código/Minijuego.cs" id="1_xbbuf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xbbuf"]
+
+[node name="Minijuego" type="Node2D" unique_id=583965874 node_paths=PackedStringArray("ContenedorCerraduras")]
+z_index = 1
+script = ExtResource("1_xbbuf")
+ContenedorCerraduras = NodePath("Cerraduras")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=2020743785]
+modulate = Color(0.29586652, 0.2958665, 0.2958665, 1)
+scale = Vector2(1280, 720)
+texture = SubResource("CanvasTexture_xbbuf")
+centered = false
+
+[node name="Cerraduras" type="Node2D" parent="." unique_id=2000572840]
+
+[node name="Cerradura" parent="Cerraduras" unique_id=452705012 instance=ExtResource("1_ldoax")]
+position = Vector2(280, 250)
+
+[node name="Cerradura2" parent="Cerraduras" unique_id=389462267 instance=ExtResource("1_ldoax")]
+position = Vector2(526, 251)
+
+[node name="Cerradura3" parent="Cerraduras" unique_id=806639612 instance=ExtResource("1_ldoax")]
+position = Vector2(762, 250)
+
+[node name="Cerradura4" parent="Cerraduras" unique_id=1028399853 instance=ExtResource("1_ldoax")]
+position = Vector2(999, 248)
+
+[node name="Cerradura5" parent="Cerraduras" unique_id=153753659 instance=ExtResource("1_ldoax")]
+position = Vector2(382, 478)
+
+[node name="Cerradura6" parent="Cerraduras" unique_id=1928190708 instance=ExtResource("1_ldoax")]
+position = Vector2(632, 481)
+
+[node name="Cerradura7" parent="Cerraduras" unique_id=641699195 instance=ExtResource("1_ldoax")]
+position = Vector2(892, 480)

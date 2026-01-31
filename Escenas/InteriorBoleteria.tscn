@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://buywy3b056gwn"]
+
+[ext_resource type="Script" uid="uid://chjrc50v1yh7b" path="res://Código/InteriorBoleteria.cs" id="1_ho500"]
+[ext_resource type="Texture2D" uid="uid://bf5dd6ph8134u" path="res://Visual/InteriorBoleteria.png" id="2_xmv5o"]
+[ext_resource type="PackedScene" uid="uid://5y5bl84kifcc" path="res://Escenas/AreaTransicion.tscn" id="3_lo5x4"]
+[ext_resource type="PackedScene" uid="uid://be1vqx5rvf06y" path="res://Escenas/AreaInteractuable.tscn" id="4_ho500"]
+[ext_resource type="PackedScene" uid="uid://cosmnnkviyxow" path="res://Escenas/CajaBoletos.tscn" id="5_xmv5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7swk0"]
+atlas = ExtResource("2_xmv5o")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo5x4"]
+atlas = ExtResource("2_xmv5o")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k61yb"]
+atlas = ExtResource("2_xmv5o")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dkk8"]
+atlas = ExtResource("2_xmv5o")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5otr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7swk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo5x4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k61yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dkk8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3whf2"]
+size = Vector2(202, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72g81"]
+size = Vector2(64, 264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6xvb"]
+size = Vector2(896, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtcsy"]
+size = Vector2(64, 200.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1uuh"]
+size = Vector2(960, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmv5o"]
+size = Vector2(106, 382)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxelq"]
+radius = 49.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ho500"]
+size = Vector2(420, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swk0"]
+size = Vector2(42, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo5x4"]
+size = Vector2(208, 20)
+
+[node name="InteriorBoleteria" type="Node2D" unique_id=314668453 node_paths=PackedStringArray("CajaBoletos", "Camara")]
+texture_filter = 1
+script = ExtResource("1_ho500")
+CajaBoletos = NodePath("CajaBoletos")
+Camara = NodePath("Camara")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="." unique_id=94971032]
+position = Vector2(320, 360)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5otr1")
+autoplay = "default"
+frame_progress = 0.13266027
+centered = false
+
+[node name="AreaTransicion1" parent="." unique_id=1244926905 instance=ExtResource("3_lo5x4")]
+position = Vector2(272, 608)
+rotation = 1.5707964
+ZonaObjetivo = 3
+PosicionJugador = Vector2(1416, 192)
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTransicion1" unique_id=1622265977]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_3whf2")
+
+[node name="Camara" type="Camera2D" parent="." unique_id=1882591951]
+position = Vector2(128, 288)
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=1314880980]
+collision_layer = 8
+collision_priority = 3.0
+
+[node name="Izquierda" type="CollisionShape2D" parent="Limites" unique_id=700134088]
+position = Vector2(288, 852)
+shape = SubResource("RectangleShape2D_72g81")
+
+[node name="Abajo" type="CollisionShape2D" parent="Limites" unique_id=693136477]
+position = Vector2(768, 941.5)
+shape = SubResource("RectangleShape2D_r6xvb")
+
+[node name="Limite1" type="CollisionShape2D" parent="Limites" unique_id=1410546046]
+position = Vector2(240, 618)
+shape = SubResource("RectangleShape2D_vtcsy")
+
+[node name="Arriba" type="CollisionShape2D" parent="Limites" unique_id=2081016957]
+position = Vector2(736, 475)
+shape = SubResource("RectangleShape2D_m1uuh")
+
+[node name="Derecha" type="CollisionShape2D" parent="Limites" unique_id=1463544746]
+position = Vector2(1163, 709)
+shape = SubResource("RectangleShape2D_xmv5o")
+
+[node name="Silla" type="CollisionShape2D" parent="Limites" unique_id=537552354]
+position = Vector2(839, 761)
+shape = SubResource("CircleShape2D_vxelq")
+
+[node name="Mesa" type="CollisionShape2D" parent="Limites" unique_id=124304134]
+position = Vector2(682, 862)
+shape = SubResource("RectangleShape2D_ho500")
+
+[node name="AreaInteractuable" parent="." unique_id=667577467 instance=ExtResource("4_ho500")]
+position = Vector2(1086, 624)
+Texto = PackedStringArray("Parecen ser unas planillas de venta.")
+
+[node name="Colision" type="CollisionShape2D" parent="AreaInteractuable" unique_id=1833894748]
+shape = SubResource("RectangleShape2D_7swk0")
+
+[node name="CajaBoletos" parent="." unique_id=333508887 instance=ExtResource("5_xmv5o")]
+position = Vector2(672, 808)
+
+[node name="Colision" type="CollisionShape2D" parent="CajaBoletos" unique_id=809050384]
+shape = SubResource("RectangleShape2D_lo5x4")
+
+[connection signal="IniciarMinijuego" from="CajaBoletos" to="." method="ComenzarMinijuego"]

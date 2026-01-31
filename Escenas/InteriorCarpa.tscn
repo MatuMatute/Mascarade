@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://did67jl3hnv4m"]
+
+[ext_resource type="Script" uid="uid://cm8fvc6trnift" path="res://Código/EntradaCarpa.cs" id="1_d7xqx"]
+[ext_resource type="Texture2D" uid="uid://bhski6ke2y65d" path="res://Visual/CircoInterior.png" id="2_ywe4i"]
+[ext_resource type="PackedScene" uid="uid://caini43clwqke" path="res://Escenas/MazoRecolectable.tscn" id="3_d7xqx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5otr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ywe4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1uuh"]
+size = Vector2(1656, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72g81"]
+size = Vector2(132, 327)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6xvb"]
+size = Vector2(1920, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx4ha"]
+size = Vector2(132, 327)
+
+[node name="InteriorCarpa" type="Node2D" unique_id=314668453 node_paths=PackedStringArray("Camara")]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_d7xqx")
+Camara = NodePath("Camara")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="." unique_id=94971032]
+sprite_frames = SubResource("SpriteFrames_5otr1")
+autoplay = "default"
+frame_progress = 0.8204694
+centered = false
+
+[node name="Camara" type="Camera2D" parent="." unique_id=1882591951]
+position = Vector2(960, 792)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=1314880980]
+collision_layer = 8
+collision_priority = 3.0
+
+[node name="Arriba" type="CollisionShape2D" parent="Limites" unique_id=2081016957]
+position = Vector2(960, 752)
+shape = SubResource("RectangleShape2D_m1uuh")
+
+[node name="Izquierda1" type="CollisionShape2D" parent="Limites" unique_id=700134088]
+position = Vector2(66, 883.5)
+shape = SubResource("RectangleShape2D_72g81")
+
+[node name="Abajo" type="CollisionShape2D" parent="Limites" unique_id=693136477]
+position = Vector2(960, 1085.5)
+shape = SubResource("RectangleShape2D_r6xvb")
+
+[node name="Derecha2" type="CollisionShape2D" parent="Limites" unique_id=850226836]
+position = Vector2(1854, 883.5)
+shape = SubResource("RectangleShape2D_cx4ha")
+
+[node name="MazoRecolectable" parent="." unique_id=745526743 instance=ExtResource("3_d7xqx")]
+position = Vector2(960, 856)

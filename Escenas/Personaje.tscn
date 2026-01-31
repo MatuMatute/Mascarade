@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c728vf6d273qg"]
+
+[ext_resource type="Script" uid="uid://gjsgc81o6wb7" path="res://Código/Personaje.cs" id="1_0gco6"]
+[ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_qg4o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gco6"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qg4o5"]
+radius = 97.00516
+
+[node name="Personaje" type="StaticBody2D" unique_id=1557987084]
+script = ExtResource("1_0gco6")
+Conversacion = PackedStringArray("Buenas noches, este es un dialogo de prueba")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=29546601]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("1_qg4o5")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1831281309]
+shape = SubResource("RectangleShape2D_0gco6")
+
+[node name="AreaCharla" type="Area2D" parent="." unique_id=1073467422]
+
+[node name="Colision" type="CollisionShape2D" parent="AreaCharla" unique_id=149271779]
+shape = SubResource("CircleShape2D_qg4o5")
+
+[connection signal="body_entered" from="AreaCharla" to="." method="ProtagonistaEnArea"]

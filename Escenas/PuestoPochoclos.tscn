@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d3lg0pm4ah4v8"]
+
+[ext_resource type="Texture2D" uid="uid://bo5rdlvgwa66g" path="res://Visual/PuestodePochoclos.png" id="1_yjc1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejcyn"]
+size = Vector2(276, 121)
+
+[node name="PuestoPochoclos" type="StaticBody2D" unique_id=1875205479]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=949218421]
+position = Vector2(-8, -64)
+texture = ExtResource("1_yjc1x")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=630253635]
+position = Vector2(12, 51)
+shape = SubResource("RectangleShape2D_ejcyn")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqg6fsy67wer3"]
+
+[ext_resource type="Script" uid="uid://cbvo4nrujwugd" path="res://Código/AreaDialogoBoletero.cs" id="1_ligcv"]
+
+[node name="AreaDialogoBoletero" type="Area2D" unique_id=667577467]
+script = ExtResource("1_ligcv")
+
+[connection signal="body_entered" from="." to="." method="EntradaEntidad"]
+[connection signal="body_exited" from="." to="." method="SalidaEntidad"]

@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://m0nm8d84q8hd"]
 
+[ext_resource type="Script" uid="uid://bryoy7eb18o3c" path="res://Código/Interfaz.cs" id="1_cm7ul"]
 [ext_resource type="PackedScene" uid="uid://djebtvamj38xb" path="res://Escenas/cajaTexto.tscn" id="1_peb2f"]
+[ext_resource type="FontFile" uid="uid://cbiwnfh5dfk1m" path="res://Visual/Fuentes de Letras/RougeScript-Regular.ttf" id="2_cswj6"]
+[ext_resource type="LabelSettings" uid="uid://13iw5man4uc" path="res://Visual/Configuracion de fuentes/Descripcion.tres" id="3_wlqyy"]
+[ext_resource type="Texture2D" uid="uid://b2b0abqktutoy" path="res://Visual/TeclasMovimiento.png" id="4_e0f55"]
+[ext_resource type="Script" uid="uid://cdjkqqi63jan6" path="res://Código/Salir.cs" id="4_fyldm"]
+[ext_resource type="LabelSettings" uid="uid://bl50ubtt8n75j" path="res://Visual/Configuracion de fuentes/TituloPrincipal.tres" id="4_ykoxn"]
+[ext_resource type="Texture2D" uid="uid://bulcd5v0u6eh4" path="res://Visual/ClicIzquierdo.png" id="5_xiyos"]
+[ext_resource type="Texture2D" uid="uid://bpknnedvtp7dm" path="res://Visual/Logotipo.png" id="6_wlqyy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0jut"]
 bg_color = Color(0.80696785, 0.03709064, 0.26275864, 1)
@@ -9,15 +17,279 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[node name="Interfaz" type="Control" unique_id=1421040145]
+[sub_resource type="Animation" id="Animation_gr0k6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Equipo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Version:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuPrincipal:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Transición:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Transición:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MargenJuego:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fyldm"]
+resource_name = "intro"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Equipo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Version:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MenuPrincipal:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MenuPrincipal:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e0f55"]
+resource_name = "transicionANegro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transición:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transición:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ykoxn"]
+resource_name = "transicionATransparente"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transición:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transición:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MargenJuego:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_cm7ul"]
+resource_name = "transicionJuego"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MenuPrincipal:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MenuPrincipal:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Version:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cm7ul"]
+_data = {
+&"RESET": SubResource("Animation_gr0k6"),
+&"intro": SubResource("Animation_fyldm"),
+&"transicionANegro": SubResource("Animation_e0f55"),
+&"transicionATransparente": SubResource("Animation_ykoxn"),
+&"transicionJuego": SubResource("Animation_cm7ul")
+}
+
+[node name="Interfaz" type="Control" unique_id=1421040145 node_paths=PackedStringArray("Animaciones", "CajaTexto", "Pausa", "Transicion", "Controles", "TemporizadorControles")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cm7ul")
+Animaciones = NodePath("Animaciones")
+CajaTexto = NodePath("MargenJuego/CajaTexto")
+Pausa = NodePath("Pausa")
+Transicion = NodePath("Transición")
+Controles = NodePath("MargenJuego/Controles")
+TemporizadorControles = NodePath("MargenJuego/Controles/Temporizador")
 
-[node name="Margen" type="MarginContainer" parent="." unique_id=1283232220]
+[node name="MargenJuego" type="MarginContainer" parent="." unique_id=1283232220]
+process_mode = 1
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,26 +301,259 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
-[node name="Vida" type="HBoxContainer" parent="Margen" unique_id=54540971]
+[node name="Vida" type="HBoxContainer" parent="MargenJuego" unique_id=54540971]
 process_mode = 1
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
-[node name="Unidad" type="Panel" parent="Margen/Vida" unique_id=257787820]
+[node name="Unidad" type="Panel" parent="MargenJuego/Vida" unique_id=257787820]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
-[node name="Unidad2" type="Panel" parent="Margen/Vida" unique_id=42642028]
+[node name="Unidad2" type="Panel" parent="MargenJuego/Vida" unique_id=42642028]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
-[node name="Unidad3" type="Panel" parent="Margen/Vida" unique_id=1015876561]
+[node name="Unidad3" type="Panel" parent="MargenJuego/Vida" unique_id=1015876561]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
-[node name="CajaTexto" parent="Margen" unique_id=1721420466 instance=ExtResource("1_peb2f")]
+[node name="CajaTexto" parent="MargenJuego" unique_id=1721420466 instance=ExtResource("1_peb2f")]
 layout_mode = 2
+
+[node name="Controles" type="Control" parent="MargenJuego" unique_id=1623939874]
+visible = false
+layout_mode = 2
+
+[node name="ContenedorMov" type="VBoxContainer" parent="MargenJuego/Controles" unique_id=571282586]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -144.0
+offset_right = 144.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Descripcion" type="Label" parent="MargenJuego/Controles/ContenedorMov" unique_id=358669473]
+layout_mode = 2
+text = "Movimiento"
+label_settings = ExtResource("3_wlqyy")
+horizontal_alignment = 1
+
+[node name="Movimiento" type="TextureRect" parent="MargenJuego/Controles/ContenedorMov" unique_id=213144137]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("4_e0f55")
+stretch_mode = 2
+
+[node name="ContenedorClic" type="VBoxContainer" parent="MargenJuego/Controles" unique_id=201388320]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -159.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Descripcion" type="Label" parent="MargenJuego/Controles/ContenedorClic" unique_id=36617477]
+layout_mode = 2
+text = "Interactuar
+Clic Izquierdo"
+label_settings = ExtResource("3_wlqyy")
+horizontal_alignment = 1
+
+[node name="ClickIzquierdo" type="TextureRect" parent="MargenJuego/Controles/ContenedorClic" unique_id=584897407]
+layout_mode = 2
+texture = ExtResource("5_xiyos")
+stretch_mode = 3
+
+[node name="Temporizador" type="Timer" parent="MargenJuego/Controles" unique_id=1202944535]
+wait_time = 15.0
+one_shot = true
+
+[node name="Transición" type="ColorRect" parent="." unique_id=1547931782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Equipo" type="TextureRect" parent="." unique_id=1024840643]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -328.0
+offset_right = 900.0
+offset_bottom = 872.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wlqyy")
+
+[node name="MenuPrincipal" type="VBoxContainer" parent="." unique_id=476212890]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="MenuPrincipal" unique_id=2046095738]
+layout_mode = 2
+text = "Mascarade"
+label_settings = ExtResource("4_ykoxn")
+
+[node name="Jugar" type="Button" parent="MenuPrincipal" unique_id=1116109424]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Jugar"
+
+[node name="Opciones" type="Button" parent="MenuPrincipal" unique_id=1998161361]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="MenuPrincipal" unique_id=1834730908]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Salir"
+script = ExtResource("4_fyldm")
+
+[node name="Pausa" type="VBoxContainer" parent="." unique_id=1400533588]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Pausa" unique_id=1524995774]
+layout_mode = 2
+text = "Pausa"
+label_settings = ExtResource("4_ykoxn")
+
+[node name="Reanudar" type="Button" parent="Pausa" unique_id=730030108]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Reanudar"
+
+[node name="Salir" type="Button" parent="Pausa" unique_id=57453836]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 64
+text = "Salir"
+script = ExtResource("4_fyldm")
+
+[node name="Opciones" type="VBoxContainer" parent="." unique_id=1999218427]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="Opciones" unique_id=845815579]
+layout_mode = 2
+text = "Opciones"
+label_settings = ExtResource("4_ykoxn")
+
+[node name="PantallaCompleta" type="CheckButton" parent="Opciones" unique_id=772288666]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cswj6")
+theme_override_font_sizes/font_size = 32
+button_pressed = true
+text = "Pantalla completa"
+
+[node name="VolumenGeneral" type="Label" parent="Opciones" unique_id=517464479]
+layout_mode = 2
+text = "Volumen General"
+label_settings = ExtResource("3_wlqyy")
+horizontal_alignment = 1
+
+[node name="SliderVolGeneral" type="HSlider" parent="Opciones" unique_id=1572727946]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="." unique_id=1115025975]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0.3.3-máscara"
+
+[node name="Animaciones" type="AnimationPlayer" parent="." unique_id=380158101]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_cm7ul")
+
+[connection signal="timeout" from="MargenJuego/Controles/Temporizador" to="." method="EsconderControles"]
+[connection signal="pressed" from="MenuPrincipal/Jugar" to="." method="JugarPresionado"]
+[connection signal="pressed" from="MenuPrincipal/Salir" to="MenuPrincipal/Salir" method="Presionado"]
+[connection signal="pressed" from="Pausa/Reanudar" to="." method="Reanudar"]
+[connection signal="pressed" from="Pausa/Salir" to="Pausa/Salir" method="Presionado"]
+[connection signal="animation_finished" from="Animaciones" to="." method="AnimacionHaFinalizado"]

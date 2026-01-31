@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4r4l3ryrddqy"]
+
+[ext_resource type="Script" uid="uid://buy7evkdg1l2w" path="res://Código/AreaTexto.cs" id="1_1rtw1"]
+
+[node name="AreaTexto" type="Area2D" unique_id=667577467 node_paths=PackedStringArray("Colision")]
+script = ExtResource("1_1rtw1")
+Colision = NodePath("")
+Texto = null
+
+[connection signal="body_entered" from="." to="." method="EntradaEntidad"]

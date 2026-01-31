@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btwff218p4pl4"]
+
+[ext_resource type="Script" uid="uid://1ppjiq16oi6p" path="res://Código/Cerradura.cs" id="1_qk0t0"]
+[ext_resource type="Texture2D" uid="uid://b5h0gc0ttp703" path="res://Visual/TeclaCaja.png" id="2_qk0t0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qk0t0"]
+radius = 96.0
+
+[node name="Cerradura" type="Area2D" unique_id=452705012 node_paths=PackedStringArray("Temporizador")]
+collision_layer = 31
+collision_mask = 16
+priority = 3
+script = ExtResource("1_qk0t0")
+Temporizador = NodePath("Temporizador")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1935959400]
+texture = ExtResource("2_qk0t0")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=581150309]
+shape = SubResource("CircleShape2D_qk0t0")
+
+[node name="Temporizador" type="Timer" parent="." unique_id=1729254691]
+
+[connection signal="input_event" from="." to="." method="EventoClic"]
+[connection signal="timeout" from="Temporizador" to="." method="TiempoTerminado"]

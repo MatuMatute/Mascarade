@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://dl12bnmqnrquw"]
+
+[ext_resource type="Script" uid="uid://c0ec10yfuefbj" path="res://Código/Entrada.cs" id="1_w2k32"]
+[ext_resource type="Texture2D" uid="uid://cieg4o5eccb2x" path="res://Visual/Entrada.png" id="2_w2k32"]
+[ext_resource type="PackedScene" uid="uid://5y5bl84kifcc" path="res://Escenas/AreaTransicion.tscn" id="3_hl60j"]
+[ext_resource type="PackedScene" uid="uid://bk8lsuxjtvoaq" path="res://Escenas/Arbol2.tscn" id="3_qjik4"]
+[ext_resource type="PackedScene" uid="uid://4r4l3ryrddqy" path="res://Escenas/AreaTexto.tscn" id="4_a1bot"]
+[ext_resource type="PackedScene" uid="uid://x0dm0pnguby" path="res://Escenas/Protagonista.tscn" id="6_7cyke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl60j"]
+atlas = ExtResource("2_w2k32")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1bot"]
+atlas = ExtResource("2_w2k32")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjik4"]
+atlas = ExtResource("2_w2k32")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cyke"]
+atlas = ExtResource("2_w2k32")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqlq5"]
+atlas = ExtResource("2_w2k32")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ybu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl60j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1bot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjik4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cyke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqlq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1bot"]
+size = Vector2(159, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjik4"]
+size = Vector2(464, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cyke"]
+size = Vector2(464, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqlq5"]
+size = Vector2(160, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncqu4"]
+size = Vector2(464, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn08m"]
+size = Vector2(464, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f4ql"]
+size = Vector2(704, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ck7"]
+size = Vector2(704, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le8up"]
+size = Vector2(258, 273)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdcxw"]
+size = Vector2(102, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jsfi"]
+size = Vector2(704, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knr84"]
+size = Vector2(704, 88)
+
+[node name="Entrada" type="Node2D" unique_id=1327510525 node_paths=PackedStringArray("Camara")]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_w2k32")
+Camara = NodePath("Camara")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="." unique_id=56456102]
+sprite_frames = SubResource("SpriteFrames_22ybu")
+autoplay = "default"
+frame_progress = 0.6024066
+centered = false
+
+[node name="Camara" type="Camera2D" parent="." unique_id=968084663]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=552388488]
+
+[node name="ColisionIzq" type="CollisionShape2D" parent="Limites" unique_id=632778053]
+position = Vector2(81, 540)
+shape = SubResource("RectangleShape2D_a1bot")
+
+[node name="ColisionArriba1" type="CollisionShape2D" parent="Limites" unique_id=472032597]
+position = Vector2(376, -48)
+shape = SubResource("RectangleShape2D_qjik4")
+
+[node name="ColisionArriba2" type="CollisionShape2D" parent="Limites" unique_id=292488055]
+position = Vector2(1544, -48)
+shape = SubResource("RectangleShape2D_7cyke")
+
+[node name="ColisionDer" type="CollisionShape2D" parent="Limites" unique_id=129828099]
+position = Vector2(1840, 540)
+shape = SubResource("RectangleShape2D_fqlq5")
+
+[node name="ColisionAbajo1" type="CollisionShape2D" parent="Limites" unique_id=852226127]
+position = Vector2(376, 1128)
+shape = SubResource("RectangleShape2D_ncqu4")
+
+[node name="ColisionAbajo2" type="CollisionShape2D" parent="Limites" unique_id=2099976698]
+position = Vector2(1544, 1128)
+shape = SubResource("RectangleShape2D_jn08m")
+
+[node name="Limite1" type="CollisionShape2D" parent="Limites" unique_id=206396837]
+position = Vector2(960, -120)
+shape = SubResource("RectangleShape2D_7f4ql")
+
+[node name="Limite2" type="CollisionShape2D" parent="Limites" unique_id=1292294563]
+position = Vector2(960, 1180)
+shape = SubResource("RectangleShape2D_d1ck7")
+
+[node name="Localsito" type="CollisionShape2D" parent="Limites" unique_id=1997646124]
+position = Vector2(447, 143.5)
+shape = SubResource("RectangleShape2D_le8up")
+
+[node name="Banco1" type="CollisionShape2D" parent="Limites" unique_id=71724479]
+position = Vector2(410, 418)
+shape = SubResource("RectangleShape2D_pdcxw")
+
+[node name="Banco2" type="CollisionShape2D" parent="Limites" unique_id=453444434]
+position = Vector2(1510, 417.5)
+shape = SubResource("RectangleShape2D_pdcxw")
+
+[node name="Banco3" type="CollisionShape2D" parent="Limites" unique_id=1688905480]
+position = Vector2(1512, 880)
+shape = SubResource("RectangleShape2D_pdcxw")
+
+[node name="Banco4" type="CollisionShape2D" parent="Limites" unique_id=1950107500]
+position = Vector2(408, 880)
+shape = SubResource("RectangleShape2D_pdcxw")
+
+[node name="Arbol" parent="." unique_id=542886076 instance=ExtResource("3_qjik4")]
+position = Vector2(1640, 688)
+
+[node name="Arbol2" parent="." unique_id=608615435 instance=ExtResource("3_qjik4")]
+position = Vector2(280, 688)
+scale = Vector2(-1, 1)
+
+[node name="Arbol3" parent="." unique_id=371710516 instance=ExtResource("3_qjik4")]
+position = Vector2(1400, 224)
+scale = Vector2(-1, 1)
+
+[node name="AreaTransicion" parent="." unique_id=1244926905 instance=ExtResource("3_hl60j")]
+position = Vector2(960, -56)
+ZonaObjetivo = 2
+PosicionJugador = Vector2(960, 960)
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTransicion" unique_id=654921571]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_5jsfi")
+
+[node name="AreaTexto" parent="." unique_id=667577467 instance=ExtResource("4_a1bot")]
+position = Vector2(960, 1144)
+Texto = PackedStringArray("No puedo abandonar a mis compañeros, no puedo irme de acá. Todavía.")
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTexto" unique_id=278734541]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_knr84")
+
+[node name="Protagonista" parent="." unique_id=1251422844 instance=ExtResource("6_7cyke")]
+position = Vector2(-496, 424)

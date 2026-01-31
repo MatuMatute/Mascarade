@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://ba0vqw1ui614v"]
+
+[ext_resource type="Texture2D" uid="uid://dudfhppwdrnrb" path="res://Visual/Arbol.png" id="1_al85m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgl1r"]
+atlas = ExtResource("1_al85m")
+region = Rect2(0, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phovs"]
+atlas = ExtResource("1_al85m")
+region = Rect2(379, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0js81"]
+atlas = ExtResource("1_al85m")
+region = Rect2(758, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqxmq"]
+atlas = ExtResource("1_al85m")
+region = Rect2(1137, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taw5f"]
+atlas = ExtResource("1_al85m")
+region = Rect2(1516, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16w6t"]
+atlas = ExtResource("1_al85m")
+region = Rect2(1895, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6idxa"]
+atlas = ExtResource("1_al85m")
+region = Rect2(2274, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48t8g"]
+atlas = ExtResource("1_al85m")
+region = Rect2(2653, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqmvd"]
+atlas = ExtResource("1_al85m")
+region = Rect2(3032, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bskh3"]
+atlas = ExtResource("1_al85m")
+region = Rect2(3411, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awxfu"]
+atlas = ExtResource("1_al85m")
+region = Rect2(3790, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t740"]
+atlas = ExtResource("1_al85m")
+region = Rect2(4169, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebd1y"]
+atlas = ExtResource("1_al85m")
+region = Rect2(4548, 0, 379, 523)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foil3"]
+atlas = ExtResource("1_al85m")
+region = Rect2(4927, 0, 379, 523)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7c2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgl1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phovs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0js81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqxmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taw5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16w6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6idxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48t8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqmvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bskh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awxfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t740")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebd1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foil3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmew6"]
+radius = 48.0
+
+[node name="Arbol" type="StaticBody2D" unique_id=542886076]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1443768185]
+position = Vector2(-24, -168)
+sprite_frames = SubResource("SpriteFrames_d7c2f")
+autoplay = "default"
+frame = 13
+frame_progress = 0.31632945
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=334442098]
+shape = SubResource("CircleShape2D_mmew6")

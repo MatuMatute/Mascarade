@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cosmnnkviyxow"]
+
+[ext_resource type="Script" uid="uid://oeg1irwjmel6" path="res://Código/CajaBoletos.cs" id="1_ddga8"]
+
+[node name="CajaBoletos" type="Area2D" unique_id=667577467]
+script = ExtResource("1_ddga8")
+
+[connection signal="body_entered" from="." to="." method="EntradaEntidad"]
+[connection signal="body_exited" from="." to="." method="SalidaEntidad"]

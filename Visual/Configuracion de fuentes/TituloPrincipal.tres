@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bl50ubtt8n75j"]
+
+[ext_resource type="FontFile" uid="uid://cbiwnfh5dfk1m" path="res://Visual/Fuentes de Letras/RougeScript-Regular.ttf" id="1_k4eo4"]
+
+[resource]
+font = ExtResource("1_k4eo4")
+font_size = 128

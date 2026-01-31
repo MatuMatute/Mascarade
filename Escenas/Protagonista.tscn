@@ -1,36 +1,133 @@
 [gd_scene format=3 uid="uid://x0dm0pnguby"]
 
 [ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_t0ve2"]
+[ext_resource type="Texture2D" uid="uid://c2eiakkpdyr50" path="res://Visual/Revisar.png" id="2_rdtc7"]
+[ext_resource type="Texture2D" uid="uid://cvrnh46xunmb5" path="res://Visual/AbrirPuerta.png" id="2_rlqnq"]
 [ext_resource type="Script" uid="uid://c1qxreeaslvt2" path="res://Código/Protagonista.cs" id="2_ti2e3"]
-[ext_resource type="PackedScene" uid="uid://bi7kcxh868vg0" path="res://Escenas/Mazo.tscn" id="3_rdtc7"]
+[ext_resource type="Texture2D" uid="uid://dka4onmexefld" path="res://Visual/ProtagonistaAbajo.png" id="4_0uvs4"]
+[ext_resource type="Texture2D" uid="uid://b4643dxc3s635" path="res://Visual/ProtagonistaArriba.png" id="5_6nslp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlqnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rlqnq")
+}],
+"loop": true,
+"name": &"Puerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rdtc7")
+}],
+"loop": true,
+"name": &"Revisar",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uvs4"]
+atlas = ExtResource("4_0uvs4")
+region = Rect2(0, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nslp"]
+atlas = ExtResource("4_0uvs4")
+region = Rect2(240, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umu7j"]
+atlas = ExtResource("4_0uvs4")
+region = Rect2(480, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68x5"]
+atlas = ExtResource("5_6nslp")
+region = Rect2(0, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qraiw"]
+atlas = ExtResource("5_6nslp")
+region = Rect2(240, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoaja"]
+atlas = ExtResource("5_6nslp")
+region = Rect2(480, 0, 240, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyykv"]
+atlas = ExtResource("5_6nslp")
+region = Rect2(720, 0, 240, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t0ve2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0uvs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nslp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umu7j")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68x5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qraiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoaja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyykv")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_t0ve2")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t0ve2")
+}],
+"loop": true,
+"name": &"Izquierda",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdtc7"]
-radius = 31.0
-height = 98.0
+radius = 24.0
+height = 112.0
 
-[node name="Protagonista" type="CharacterBody2D" unique_id=1251422844 node_paths=PackedStringArray("Mazo")]
+[node name="Protagonista" type="CharacterBody2D" unique_id=1251422844 node_paths=PackedStringArray("Sprite", "IconoInteraccion")]
 process_mode = 1
 collision_mask = 13
 script = ExtResource("2_ti2e3")
-Mazo = NodePath("Mazo")
+Sprite = NodePath("Sprite")
+IconoInteraccion = NodePath("Interaccion")
+metadata/_edit_horizontal_guides_ = [-146.0]
+
+[node name="Interaccion" type="AnimatedSprite2D" parent="." unique_id=2045506282]
+position = Vector2(-2, -96.00001)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_rlqnq")
+animation = &"Revisar"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=638420846]
-scale = Vector2(0.5, 0.765625)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_t0ve2")
-animation = &"idle"
+animation = &"Arriba"
+frame_progress = 0.4632462
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=972059325]
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_rdtc7")
-
-[node name="Mazo" parent="." unique_id=562676939 instance=ExtResource("3_rdtc7")]

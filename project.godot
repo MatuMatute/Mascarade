@@ -11,14 +11,22 @@ config_version=5
 [application]
 
 config/name="Proyecto Mascarade"
+config/version="0.3.3"
 run/main_scene="uid://c3xwyehh4eai4"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Esencial="*uid://c6p6ivybb2ill"
+
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=576
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -83,3 +91,4 @@ Atacar={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

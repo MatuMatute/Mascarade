@@ -1,0 +1,1216 @@
+[gd_scene format=3 uid="uid://umuecmrjax2j"]
+
+[ext_resource type="Script" uid="uid://b0ssvkxy60gai" path="res://Código/Fuente.cs" id="1_nvxem"]
+[ext_resource type="Texture2D" uid="uid://dxxced35bn41r" path="res://Visual/PlazaCentral.png" id="2_nvxem"]
+[ext_resource type="Texture2D" uid="uid://uuw8dmwb4h3d" path="res://Visual/Presentador.png" id="3_vvk3v"]
+[ext_resource type="PackedScene" uid="uid://5y5bl84kifcc" path="res://Escenas/AreaTransicion.tscn" id="4_swkeg"]
+[ext_resource type="PackedScene" uid="uid://ba0vqw1ui614v" path="res://Escenas/Arbol.tscn" id="5_ukl4b"]
+[ext_resource type="PackedScene" uid="uid://4r4l3ryrddqy" path="res://Escenas/AreaTexto.tscn" id="5_vvk3v"]
+[ext_resource type="Texture2D" uid="uid://h7n543aoaoc7" path="res://Visual/Acrobata.png" id="6_eeer8"]
+[ext_resource type="Texture2D" uid="uid://b5udt1oe2qqcr" path="res://Visual/Adivina.png" id="7_tltqc"]
+[ext_resource type="PackedScene" uid="uid://be1vqx5rvf06y" path="res://Escenas/AreaInteractuable.tscn" id="7_yx8th"]
+[ext_resource type="Texture2D" uid="uid://cr5154fcuir63" path="res://Visual/Mimo.png" id="8_n1cio"]
+[ext_resource type="Texture2D" uid="uid://dlo642rhlehye" path="res://Visual/Tango.png" id="9_4skr2"]
+[ext_resource type="Texture2D" uid="uid://cn28whghmg5us" path="res://Visual/Anfitrion.png" id="10_5otr1"]
+[ext_resource type="Texture2D" uid="uid://dgcu5opx5decf" path="res://Visual/Payaso.png" id="12_1ta45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06trx"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swkeg"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukl4b"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvk3v"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeer8"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tltqc"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(9600, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1cio"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(11520, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4skr2"]
+atlas = ExtResource("2_nvxem")
+region = Rect2(13440, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5otr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06trx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swkeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukl4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvk3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeer8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tltqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1cio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4skr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5otr1"]
+atlas = ExtResource("3_vvk3v")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx8th"]
+atlas = ExtResource("3_vvk3v")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ta45"]
+atlas = ExtResource("3_vvk3v")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk8ir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5otr1")
+}],
+"loop": true,
+"name": &"Apuntando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx8th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ta45")
+}],
+"loop": true,
+"name": &"Quieto",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeer8"]
+size = Vector2(704, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1cio"]
+size = Vector2(368.00006, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8lmn"]
+size = Vector2(72, 368)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukl4b"]
+size = Vector2(624, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvk3v"]
+size = Vector2(624, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tltqc"]
+size = Vector2(64, 312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4skr2"]
+size = Vector2(64, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5otr1"]
+size = Vector2(1952, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ta45"]
+size = Vector2(64, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk8ir"]
+size = Vector2(64, 312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx8th"]
+size = Vector2(264, 136)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukl4b"]
+radius = 224.00002
+height = 800.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nussx"]
+size = Vector2(704, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr8fv"]
+size = Vector2(64, 368)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ta45"]
+radius = 40.0
+height = 160.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yx8th"]
+radius = 40.0
+height = 176.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk8ir"]
+atlas = ExtResource("6_eeer8")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8lmn"]
+atlas = ExtResource("6_eeer8")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nussx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk8ir")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8lmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eeer8"]
+radius = 24.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nussx"]
+atlas = ExtResource("7_tltqc")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr8fv"]
+atlas = ExtResource("7_tltqc")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u06s6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nussx")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr8fv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tltqc"]
+radius = 24.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u06s6"]
+atlas = ExtResource("8_n1cio")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37o0w"]
+atlas = ExtResource("8_n1cio")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qh3vu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u06s6")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37o0w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_egwq7"]
+radius = 32.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh3vu"]
+atlas = ExtResource("9_4skr2")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egwq7"]
+atlas = ExtResource("9_4skr2")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_321t4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh3vu")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egwq7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4skr2"]
+radius = 24.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_321t4"]
+atlas = ExtResource("10_5otr1")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftkeg"]
+atlas = ExtResource("10_5otr1")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ckr5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_321t4")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftkeg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5otr1"]
+radius = 24.0
+height = 96.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ckr5"]
+atlas = ExtResource("12_1ta45")
+region = Rect2(160, 0, 160, 157)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hkcc"]
+atlas = ExtResource("12_1ta45")
+region = Rect2(0, 0, 160, 157)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yql3p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ckr5")
+}],
+"loop": true,
+"name": &"Estatua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hkcc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bk8ir"]
+radius = 32.0
+height = 112.0
+
+[sub_resource type="Animation" id="Animation_vvk3v"]
+resource_name = "DesvanecerPresentador"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Presentador:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_06trx"]
+resource_name = "MirarPresentador"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camara:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 792), Vector2(960, 368)]
+}
+
+[sub_resource type="Animation" id="Animation_5otr1"]
+resource_name = "MostrarCompañeros"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Acrobata:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Acrobata:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Adivina:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Adivina:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mimo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mimo:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tango:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tango:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Anfitrion:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Anfitrion:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Acrobata/Sprite:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Adivina/Sprite:animation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Mimo/Sprite:animation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Tango/Sprite:animation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Anfitrion/Sprite:animation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Payaso:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Payaso:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Payaso/Sprite:animation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+
+[sub_resource type="Animation" id="Animation_yx8th"]
+resource_name = "PetrificarCompañeros"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Acrobata:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Adivina:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mimo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tango:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Anfitrion:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Acrobata/Sprite:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Adivina/Sprite:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Mimo/Sprite:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Tango/Sprite:animation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Anfitrion/Sprite:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Payaso:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Payaso/Sprite:animation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"Estatua"]
+}
+
+[sub_resource type="Animation" id="Animation_swkeg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camara:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Presentador:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Acrobata:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Adivina:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mimo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tango:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Anfitrion:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Acrobata:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Adivina:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Mimo:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Tango:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Anfitrion:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Acrobata/Sprite:animation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Adivina/Sprite:animation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Mimo/Sprite:animation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Tango/Sprite:animation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Anfitrion/Sprite:animation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Payaso:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Payaso:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Payaso/Sprite:animation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Estatua"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ukl4b"]
+_data = {
+&"DesvanecerPresentador": SubResource("Animation_vvk3v"),
+&"MirarPresentador": SubResource("Animation_06trx"),
+&"MostrarCompañeros": SubResource("Animation_5otr1"),
+&"PetrificarCompañeros": SubResource("Animation_yx8th"),
+&"RESET": SubResource("Animation_swkeg")
+}
+
+[node name="Fuente" type="Node2D" unique_id=314668453 node_paths=PackedStringArray("Presentador", "Acrobata", "Adivina", "Mimo", "Tango", "Anfitrion", "Payaso", "AnimacionesCamara", "Camara")]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_nvxem")
+Presentador = NodePath("Presentador")
+Acrobata = NodePath("Acrobata")
+Adivina = NodePath("Adivina")
+Mimo = NodePath("Mimo")
+Tango = NodePath("Tango")
+Anfitrion = NodePath("Anfitrion")
+Payaso = NodePath("Payaso")
+AnimacionesCamara = NodePath("AnimacionesdeCamara")
+Camara = NodePath("Camara")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="." unique_id=94971032]
+sprite_frames = SubResource("SpriteFrames_5otr1")
+autoplay = "default"
+frame_progress = 0.10757682
+centered = false
+
+[node name="Presentador" type="AnimatedSprite2D" parent="." unique_id=149557451]
+position = Vector2(963, 296)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bk8ir")
+animation = &"Quieto"
+autoplay = "Quieto"
+frame_progress = 0.79987836
+
+[node name="AreaTransicion1" parent="." unique_id=1244926905 instance=ExtResource("4_swkeg")]
+position = Vector2(960, 1136)
+ZonaObjetivo = 1
+PosicionJugador = Vector2(960, 96)
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTransicion1" unique_id=1467528384]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_eeer8")
+
+[node name="AreaTransicion2" parent="." unique_id=2050884207 instance=ExtResource("4_swkeg")]
+position = Vector2(1976, 576)
+rotation = 1.5707964
+ZonaObjetivo = 3
+PosicionJugador = Vector2(96, 556)
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTransicion2" unique_id=360320916]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_n1cio")
+
+[node name="AreaTexto" parent="." unique_id=667577467 instance=ExtResource("5_vvk3v")]
+position = Vector2(-56, 584)
+Texto = PackedStringArray("En esta dirección va a hacerse el recital de tango. Pero todavía está en preparaciones y el público no puede entrar")
+
+[node name="Colision" type="CollisionShape2D" parent="AreaTexto" unique_id=533041160]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_c8lmn")
+
+[node name="Camara" type="Camera2D" parent="." unique_id=1882591951]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=662703061]
+
+[node name="Abajo1" type="CollisionShape2D" parent="Limites" unique_id=2139308215]
+position = Vector2(296, 1116)
+shape = SubResource("RectangleShape2D_ukl4b")
+
+[node name="Abajo2" type="CollisionShape2D" parent="Limites" unique_id=236764496]
+position = Vector2(1624, 1116)
+shape = SubResource("RectangleShape2D_vvk3v")
+
+[node name="Derecha1" type="CollisionShape2D" parent="Limites" unique_id=625148553]
+position = Vector2(1952, 924)
+shape = SubResource("RectangleShape2D_tltqc")
+
+[node name="Derecha2" type="CollisionShape2D" parent="Limites" unique_id=1391235982]
+position = Vector2(1952, 200)
+shape = SubResource("RectangleShape2D_4skr2")
+
+[node name="Arriba" type="CollisionShape2D" parent="Limites" unique_id=460427835]
+position = Vector2(960, -32)
+shape = SubResource("RectangleShape2D_5otr1")
+
+[node name="Izquierda1" type="CollisionShape2D" parent="Limites" unique_id=1582267369]
+position = Vector2(-32, 200)
+shape = SubResource("RectangleShape2D_1ta45")
+
+[node name="Izquierda2" type="CollisionShape2D" parent="Limites" unique_id=2071135422]
+position = Vector2(-32, 924)
+shape = SubResource("RectangleShape2D_bk8ir")
+
+[node name="Cartel1" type="CollisionShape2D" parent="Limites" unique_id=667237842]
+position = Vector2(220, 292)
+shape = SubResource("RectangleShape2D_yx8th")
+
+[node name="Cartel2" type="CollisionShape2D" parent="Limites" unique_id=1332922904]
+position = Vector2(1699, 292)
+shape = SubResource("RectangleShape2D_yx8th")
+
+[node name="Agua" type="CollisionShape2D" parent="Limites" unique_id=1561527396]
+position = Vector2(960, 112)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ukl4b")
+
+[node name="Limite1" type="CollisionShape2D" parent="Limites" unique_id=1023105370]
+position = Vector2(960, 1152)
+shape = SubResource("RectangleShape2D_nussx")
+
+[node name="Limite2" type="CollisionShape2D" parent="Limites" unique_id=1374345600]
+position = Vector2(-80, 584)
+shape = SubResource("RectangleShape2D_lr8fv")
+
+[node name="AreaInteractuable" parent="." unique_id=987539800 instance=ExtResource("7_yx8th")]
+Texto = PackedStringArray("La piedra es cálida, eso es buena señal, pero está carente de vida.")
+
+[node name="Acrobata" type="CollisionShape2D" parent="AreaInteractuable" unique_id=1512123553]
+position = Vector2(672, 392)
+shape = SubResource("CapsuleShape2D_1ta45")
+
+[node name="Adivina" type="CollisionShape2D" parent="AreaInteractuable" unique_id=31512269]
+position = Vector2(776, 440)
+shape = SubResource("CapsuleShape2D_yx8th")
+
+[node name="Mimo" type="CollisionShape2D" parent="AreaInteractuable" unique_id=808060860]
+position = Vector2(880, 488)
+shape = SubResource("CapsuleShape2D_yx8th")
+
+[node name="Tango" type="CollisionShape2D" parent="AreaInteractuable" unique_id=1423270503]
+position = Vector2(1032, 488)
+shape = SubResource("CapsuleShape2D_yx8th")
+
+[node name="Anfitrion" type="CollisionShape2D" parent="AreaInteractuable" unique_id=212362870]
+position = Vector2(1144, 440)
+shape = SubResource("CapsuleShape2D_yx8th")
+
+[node name="Payaso" type="CollisionShape2D" parent="AreaInteractuable" unique_id=139799055]
+position = Vector2(1248, 392)
+shape = SubResource("CapsuleShape2D_yx8th")
+
+[node name="Acrobata" type="CharacterBody2D" parent="." unique_id=1723770930]
+position = Vector2(672, 392)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Acrobata" unique_id=1284324604]
+sprite_frames = SubResource("SpriteFrames_nussx")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Acrobata" unique_id=1649410858]
+shape = SubResource("CapsuleShape2D_eeer8")
+
+[node name="Adivina" type="CharacterBody2D" parent="." unique_id=440971823]
+position = Vector2(776, 440)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Adivina" unique_id=1718644750]
+sprite_frames = SubResource("SpriteFrames_u06s6")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Adivina" unique_id=801983823]
+shape = SubResource("CapsuleShape2D_tltqc")
+
+[node name="Mimo" type="CharacterBody2D" parent="." unique_id=2141540414]
+position = Vector2(880, 488)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Mimo" unique_id=114723696]
+sprite_frames = SubResource("SpriteFrames_qh3vu")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Mimo" unique_id=2137867449]
+shape = SubResource("CapsuleShape2D_egwq7")
+
+[node name="Tango" type="CharacterBody2D" parent="." unique_id=397426504]
+position = Vector2(1032, 488)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Tango" unique_id=1260245394]
+sprite_frames = SubResource("SpriteFrames_321t4")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Tango" unique_id=1543087099]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_4skr2")
+
+[node name="Anfitrion" type="CharacterBody2D" parent="." unique_id=1746999507]
+position = Vector2(1144, 440)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Anfitrion" unique_id=943991777]
+sprite_frames = SubResource("SpriteFrames_7ckr5")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Anfitrion" unique_id=1061222155]
+shape = SubResource("CapsuleShape2D_5otr1")
+
+[node name="Payaso" type="CharacterBody2D" parent="." unique_id=1628716159]
+position = Vector2(1248, 392)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Payaso" unique_id=1397007457]
+sprite_frames = SubResource("SpriteFrames_yql3p")
+animation = &"Estatua"
+autoplay = "Estatua"
+
+[node name="Colision" type="CollisionShape2D" parent="Payaso" unique_id=1945002990]
+shape = SubResource("CapsuleShape2D_bk8ir")
+
+[node name="Arbol" parent="." unique_id=542886076 instance=ExtResource("5_ukl4b")]
+position = Vector2(1728, 952)
+
+[node name="Arbol2" parent="." unique_id=1095440469 instance=ExtResource("5_ukl4b")]
+position = Vector2(192, 952)
+scale = Vector2(-1, 1)
+
+[node name="AnimacionesdeCamara" type="AnimationPlayer" parent="." unique_id=567556550]
+libraries/ = SubResource("AnimationLibrary_ukl4b")

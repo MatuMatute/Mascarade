@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cmqulm8hreas7"]
 
 [ext_resource type="PackedScene" uid="uid://x0dm0pnguby" path="res://Escenas/Protagonista.tscn" id="1_5m6p0"]
+[ext_resource type="Script" uid="uid://c6k04vdmuca5p" path="res://Código/Lugar.cs" id="1_48qwb"]
 [ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="2_2v3g5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjjiw"]
@@ -9,14 +10,73 @@ size = Vector2(20, 576)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v3g5"]
 size = Vector2(1064, 21)
 
-[node name="Plaza" type="Node2D" unique_id=499909915]
+[node name="Plaza" type="Node2D" unique_id=499909915 node_paths=PackedStringArray("Protagonista", "Camara")]
+script = ExtResource("1_48qwb")
+Protagonista = NodePath("Protagonista")
+Camara = NodePath("Camara")
+
+[node name="Camara" type="Camera2D" parent="." unique_id=1661996445]
+position = Vector2(2880, 3240)
+limit_left = 0
+limit_top = 0
+limit_right = 7680
+limit_bottom = 3240
+position_smoothing_enabled = true
+
+[node name="Sprite2" type="Sprite2D" parent="." unique_id=948953279]
+position = Vector2(2880.0002, 540.00006)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+
+[node name="Sprite3" type="Sprite2D" parent="." unique_id=1146953935]
+position = Vector2(4800, 540)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+
+[node name="Sprite4" type="Sprite2D" parent="." unique_id=629205261]
+position = Vector2(2880, 1620)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+
+[node name="SpriteEntrada" type="Sprite2D" parent="." unique_id=1805240372]
+position = Vector2(1920.0002, 2160)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+centered = false
+
+[node name="Sprite8" type="Sprite2D" parent="." unique_id=1215204649]
+position = Vector2(3840.0002, 2160)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+centered = false
+
+[node name="Sprite9" type="Sprite2D" parent="." unique_id=1568452886]
+position = Vector2(0.00024414063, 2160)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+centered = false
+
+[node name="Sprite5" type="Sprite2D" parent="." unique_id=2081932091]
+position = Vector2(960.00006, 1620.0001)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+
+[node name="Sprite6" type="Sprite2D" parent="." unique_id=1039286403]
+position = Vector2(4800.0005, 1620.0001)
+scale = Vector2(15, 8.438)
+texture = ExtResource("2_2v3g5")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1492193304]
+position = Vector2(960, 540)
+scale = Vector2(15, 8.4375)
+texture = ExtResource("2_2v3g5")
 
 [node name="Pared" type="StaticBody2D" parent="." unique_id=1538893973]
-position = Vector2(1034, 51)
+position = Vector2(-1320, 808)
 collision_layer = 8
 
 [node name="Sprite" type="Sprite2D" parent="Pared" unique_id=353465301]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0.6719414, 0.85170597, 1, 1)
 position = Vector2(1.9073486e-06, 237)
 scale = Vector2(0.15625, 4.5)
 texture = ExtResource("2_2v3g5")
@@ -26,11 +86,11 @@ position = Vector2(0, 237)
 shape = SubResource("RectangleShape2D_pjjiw")
 
 [node name="Pared2" type="StaticBody2D" parent="." unique_id=1024425116]
-position = Vector2(-10, 51)
+position = Vector2(-1472, 816)
 collision_layer = 8
 
 [node name="Sprite" type="Sprite2D" parent="Pared2" unique_id=715914561]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0.67058825, 0.8509804, 1, 1)
 position = Vector2(1.9073486e-06, 237)
 scale = Vector2(0.15625, 4.5)
 texture = ExtResource("2_2v3g5")
@@ -40,34 +100,32 @@ position = Vector2(0, 237)
 shape = SubResource("RectangleShape2D_pjjiw")
 
 [node name="Pared3" type="StaticBody2D" parent="." unique_id=1945933210]
-position = Vector2(515, -525)
+position = Vector2(-1800, 0)
 collision_layer = 8
 
 [node name="Sprite" type="Sprite2D" parent="Pared3" unique_id=82197064]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(-2.9999695, 514.5)
+modulate = Color(0.67058825, 0.8509804, 1, 1)
+position = Vector2(-6, 679.5)
 scale = Vector2(8.3125, 0.16406254)
 texture = ExtResource("2_2v3g5")
 
 [node name="Colision" type="CollisionShape2D" parent="Pared3" unique_id=731159665]
-position = Vector2(-3, 514.5)
+position = Vector2(-6.0000305, 679.5)
 shape = SubResource("RectangleShape2D_2v3g5")
 
 [node name="Pared4" type="StaticBody2D" parent="." unique_id=786485699]
-position = Vector2(512, 587)
+position = Vector2(-2080, 912)
 collision_layer = 8
 
 [node name="Sprite" type="Sprite2D" parent="Pared4" unique_id=1724864735]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(3.0517578e-05, 0)
+modulate = Color(0.67058825, 0.8509804, 1, 1)
+position = Vector2(-0.9999695, 0)
 scale = Vector2(8.3125, 0.16406254)
 texture = ExtResource("2_2v3g5")
 
 [node name="Colision" type="CollisionShape2D" parent="Pared4" unique_id=1738753853]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_2v3g5")
 
 [node name="Protagonista" parent="." unique_id=1251422844 instance=ExtResource("1_5m6p0")]
-position = Vector2(512, 288)
-
-[node name="Camara" type="Camera2D" parent="Protagonista" unique_id=1661996445]
-position_smoothing_enabled = true
+position = Vector2(2880, 3240)

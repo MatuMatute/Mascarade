@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cikfw7gr5tflg"]
+
+[ext_resource type="Texture2D" uid="uid://dke15nn1iyl35" path="res://Visual/Arbol3.png" id="1_mk5a8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ookxt"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(0, 0, 338, 478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6cw2"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(338, 0, 338, 478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8n8f"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(676, 0, 338, 478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm5rh"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(1014, 0, 338, 478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v65wk"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(1352, 0, 338, 478)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1vlu"]
+atlas = ExtResource("1_mk5a8")
+region = Rect2(1690, 0, 338, 478)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7c2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ookxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6cw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8n8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm5rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v65wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1vlu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmew6"]
+radius = 40.0
+
+[node name="Arbol" type="StaticBody2D" unique_id=542886076]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1443768185]
+position = Vector2(-24, -184)
+sprite_frames = SubResource("SpriteFrames_d7c2f")
+autoplay = "default"
+frame_progress = 0.32396802
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=334442098]
+shape = SubResource("CircleShape2D_mmew6")

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cli2fc6qsid74"]
+
+[ext_resource type="Script" uid="uid://tvfpfh1cf53i" path="res://Código/Guardia.cs" id="1_chxxp"]
+[ext_resource type="Texture2D" uid="uid://dfb2plaq3b2ax" path="res://Visual/Guardia.png" id="1_uk47q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chxxp"]
+atlas = ExtResource("1_uk47q")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0277c"]
+atlas = ExtResource("1_uk47q")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1uryg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chxxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0277c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5ju6"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chxxp"]
+radius = 24.0
+height = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk47q"]
+size = Vector2(96, 24)
+
+[node name="Guardia" type="CharacterBody2D" unique_id=874197396 node_paths=PackedStringArray("Pared")]
+script = ExtResource("1_chxxp")
+Pared = NodePath("Muro")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=719299601]
+sprite_frames = SubResource("SpriteFrames_1uryg")
+autoplay = "default"
+frame_progress = 0.5270334
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=851104468]
+shape = SubResource("CapsuleShape2D_g5ju6")
+
+[node name="AreaDialogo" type="Area2D" parent="." unique_id=983089602]
+
+[node name="Colision" type="CollisionShape2D" parent="AreaDialogo" unique_id=1940609046]
+shape = SubResource("CapsuleShape2D_chxxp")
+
+[node name="Muro" type="StaticBody2D" parent="." unique_id=995443252]
+collision_priority = 3.0
+
+[node name="Colision" type="CollisionShape2D" parent="Muro" unique_id=1574816144]
+position = Vector2(-80, 0)
+shape = SubResource("RectangleShape2D_uk47q")
+
+[connection signal="body_entered" from="AreaDialogo" to="." method="EntradaEntidad"]
