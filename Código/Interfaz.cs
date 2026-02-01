@@ -58,6 +58,23 @@ public partial class Interfaz : Control
 		ContenedorVidas.Show();
 	}
 
+	public void ActualizarVidas()
+	{
+		Godot.Collections.Array<Node> UnidadesVidas = ContenedorVidas.GetChildren();
+
+		for (int i = 0; i < Esencial.Instancia.GetSalud(); i++)
+		{
+			Control Unidad = UnidadesVidas[i] as Control;
+			Unidad.Show();
+		}
+
+		for (int i = Esencial.Instancia.GetSalud(); i < UnidadesVidas.Count; i++)
+		{
+			Control Unidad = UnidadesVidas[i] as Control;
+			Unidad.Hide();
+		}
+	}
+
 	private void EsconderControles() { Controles.Hide(); }
 
 	private void MostrarCreditos()

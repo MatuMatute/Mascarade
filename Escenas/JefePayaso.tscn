@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cvu7y1qkoyitf" path="res://Código/JefePayaso.cs" id="1_5e6ty"]
 [ext_resource type="Texture2D" uid="uid://6vmcffhrra87" path="res://Visual/PayasoJefe.png" id="1_rx2ni"]
+[ext_resource type="Script" uid="uid://dfohn1jpk4esq" path="res://Código/Mano.cs" id="3_ef270"]
+[ext_resource type="Texture2D" uid="uid://uho4015hnry4" path="res://Visual/Mano.png" id="3_uinpg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5e6ty"]
 atlas = ExtResource("1_rx2ni")
@@ -94,10 +96,75 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx2ni"]
 size = Vector2(576, 344)
 
-[node name="JefePayaso" type="Area2D" unique_id=2111886217]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4wy7"]
+atlas = ExtResource("3_uinpg")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lenx1"]
+atlas = ExtResource("3_uinpg")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03hea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4wy7")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lenx1")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uinpg"]
+radius = 48.000008
+height = 128.00002
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gsm7"]
+atlas = ExtResource("3_uinpg")
+region = Rect2(300, 0, 300, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvt3k"]
+atlas = ExtResource("3_uinpg")
+region = Rect2(0, 0, 300, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r58r5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gsm7")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvt3k")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ef270"]
+radius = 47.999992
+height = 128.0
+
+[node name="JefePayaso" type="Area2D" unique_id=2111886217 node_paths=PackedStringArray("SpriteCuerpo", "ManoDerecha", "ManoIzquierda")]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_5e6ty")
+SpriteCuerpo = NodePath("Sprite")
+ManoDerecha = NodePath("ManoDerecha")
+ManoIzquierda = NodePath("ManoIzquierda")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=83855173]
 position = Vector2(24, 0)
@@ -107,3 +174,43 @@ animation = &"Riendose"
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=62785354]
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_rx2ni")
+
+[node name="ManoDerecha" type="Area2D" parent="." unique_id=908075161 node_paths=PackedStringArray("Sprite")]
+position = Vector2(-440, -88)
+script = ExtResource("3_ef270")
+Sprite = NodePath("Sprite")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="ManoDerecha" unique_id=1348595769]
+sprite_frames = SubResource("SpriteFrames_03hea")
+animation = &"Arriba"
+flip_h = true
+
+[node name="Colision" type="CollisionShape2D" parent="ManoDerecha" unique_id=716310589]
+position = Vector2(8, 32)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_uinpg")
+
+[node name="ManoIzquierda" type="Area2D" parent="." unique_id=627376977 node_paths=PackedStringArray("Sprite")]
+position = Vector2(440, -88)
+script = ExtResource("3_ef270")
+Sprite = NodePath("Sprite")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="ManoIzquierda" unique_id=492198913]
+sprite_frames = SubResource("SpriteFrames_r58r5")
+animation = &"Arriba"
+
+[node name="Colision" type="CollisionShape2D" parent="ManoIzquierda" unique_id=277550353]
+position = Vector2(-8, 32)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ef270")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=896878031]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="EntidadDetectada"]
+[connection signal="ActivarVulnerabilidad" from="ManoDerecha" to="." method="Vulnerabilidad"]
+[connection signal="body_entered" from="ManoDerecha" to="ManoDerecha" method="EntradaEntidad"]
+[connection signal="ActivarVulnerabilidad" from="ManoIzquierda" to="." method="Vulnerabilidad"]
+[connection signal="body_entered" from="ManoIzquierda" to="ManoIzquierda" method="EntradaEntidad"]
+[connection signal="timeout" from="Cooldown" to="." method="PatronDeAtaque"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b07jpxnwdkds2" path="res://Código/InteriorCarpa.cs" id="1_ywe4i"]
 [ext_resource type="Texture2D" uid="uid://bhski6ke2y65d" path="res://Visual/CircoInterior.png" id="2_ywe4i"]
 [ext_resource type="PackedScene" uid="uid://caini43clwqke" path="res://Escenas/MazoRecolectable.tscn" id="3_d7xqx"]
+[ext_resource type="Texture2D" uid="uid://da8oyshd52u7h" path="res://Visual/GemaPayaso.png" id="4_kmdr8"]
 [ext_resource type="PackedScene" uid="uid://hnjmjtlg7jj3" path="res://Escenas/JefePayaso.tscn" id="4_ywe4i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5otr1"]
@@ -28,10 +29,22 @@ size = Vector2(1920, 77)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cx4ha"]
 size = Vector2(132, 327)
 
-[node name="InteriorCarpa" type="Node2D" unique_id=314668453 node_paths=PackedStringArray("Camara")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uut3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kmdr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="InteriorCarpa" type="Node2D" unique_id=314668453 node_paths=PackedStringArray("JefePayaso", "Camara")]
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_ywe4i")
+JefePayaso = NodePath("JefePayaso")
 Camara = NodePath("Camara")
 
 [node name="Fondo" type="AnimatedSprite2D" parent="." unique_id=94971032]
@@ -70,6 +83,11 @@ shape = SubResource("RectangleShape2D_cx4ha")
 
 [node name="MazoRecolectable" parent="." unique_id=745526743 instance=ExtResource("3_d7xqx")]
 position = Vector2(960, 856)
+
+[node name="GemaPayaso" type="AnimatedSprite2D" parent="." unique_id=610692996]
+position = Vector2(955, 584)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uut3h")
 
 [node name="JefePayaso" parent="." unique_id=1380998391 instance=ExtResource("4_ywe4i")]
 position = Vector2(952, 652)

@@ -7,13 +7,13 @@ public partial class InteriorBoleteria : Lugar
 	private readonly NodePath Minijuego = "res://Escenas/Minijuego.tscn";
 
 	private readonly string[] TextoObtuvisteBoleto = [
-		"Conseguiste un boleto para entrar!",
+		"¡Conseguiste un boleto para entrar!",
 		"Debajo de la caja hay una carta:",
 		"\"Para Mauro\"",
-		"\"Vos seguro tenés más idea que yo de como van las ganancias, después de todo soy solo un payaso y vos controlas la caja: ¡es tanto lo que recaudamos?.\"",
+		"\"Vos seguro tenés más idea que yo de como van las ganancias, después de todo soy solo un payaso y vos controlas la caja: ¿es tanto lo que recaudamos?.\"",
 		"\"Hace dos semanas, Juan vino con los demás y nos dijo que Octavio ganaba seis veces más que nosotros en este parque.\"",
 		"\"Al principio no le creí, sí bien Octavio es el jefe de nuestro show, no me imagino que alguien en este trabajo gane tanto, pero solo un día después despidieron a Juan.\"",
-		"\"Parezco paranoico, pero de enserio se está quedando con tanta plata ¡ganamos tanto por función para que le paguen eso?\""
+		"\"Parezco paranoico, pero de enserio se está quedando con tanta plata ¿ganamos tanto por función para que le paguen eso?\""
 	];
 
 	public override void _Ready()

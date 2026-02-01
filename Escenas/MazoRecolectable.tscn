@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://caini43clwqke"]
 
 [ext_resource type="Script" uid="uid://ch0275nkdy5gd" path="res://Código/MazoRecolectable.cs" id="1_0ef1k"]
-[ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_guoyi"]
+[ext_resource type="Texture2D" uid="uid://0ynve62tilol" path="res://Visual/MartilloAcostado.png" id="2_0ef1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guoyi"]
 size = Vector2(32, 32)
@@ -10,26 +10,11 @@ size = Vector2(32, 32)
 scale = Vector2(2, 2)
 script = ExtResource("1_0ef1k")
 
-[node name="Sprite1" type="Sprite2D" parent="." unique_id=455586389]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=455586389]
 modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(-1, 0)
-rotation = 1.5707964
-scale = Vector2(0.03125, 0.1953125)
-texture = ExtResource("1_guoyi")
-
-[node name="Sprite2" type="Sprite2D" parent="." unique_id=1625986573]
-modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(-13.000001, 0)
-rotation = 1.5707964
-scale = Vector2(0.06249998, 0.031250004)
-texture = ExtResource("1_guoyi")
-
-[node name="Sprite3" type="Sprite2D" parent="." unique_id=787996582]
-modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(11, 0)
-rotation = 1.5707964
-scale = Vector2(0.24, 0.085)
-texture = ExtResource("1_guoyi")
+position = Vector2(0, -7.1525574e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0ef1k")
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=1106629583]
 shape = SubResource("RectangleShape2D_guoyi")

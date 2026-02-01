@@ -1,43 +1,65 @@
 [gd_scene format=3 uid="uid://bi7kcxh868vg0"]
 
-[ext_resource type="Texture2D" uid="uid://b6d4fu8kuxwbu" path="res://icon.svg" id="1_cs1y5"]
 [ext_resource type="Script" uid="uid://1ewdrr5lfyte" path="res://Código/Mazo.cs" id="1_urx3p"]
+[ext_resource type="Texture2D" uid="uid://c1u4qowlmuiap" path="res://Visual/Mazo.png" id="2_urx3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ydph"]
+atlas = ExtResource("2_urx3p")
+region = Rect2(0, 0, 100, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqf1b"]
+atlas = ExtResource("2_urx3p")
+region = Rect2(100, 0, 100, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4us61"]
+atlas = ExtResource("2_urx3p")
+region = Rect2(200, 0, 100, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egksi"]
+atlas = ExtResource("2_urx3p")
+region = Rect2(300, 0, 100, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t75f4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ydph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqf1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4us61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egksi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1y5"]
-size = Vector2(30.666668, 11.083334)
+size = Vector2(53.333336, 29.333332)
 
-[node name="Mazo" type="CharacterBody2D" unique_id=562676939]
+[node name="Mazo" type="CharacterBody2D" unique_id=562676939 node_paths=PackedStringArray("Sprite")]
 scale = Vector2(3, 3)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 4
 script = ExtResource("1_urx3p")
+Sprite = NodePath("Sprite")
 
-[node name="Sprite1" type="Sprite2D" parent="." unique_id=1591467050]
-modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(12, 0)
-rotation = 1.5707964
-scale = Vector2(0.03125, 0.1953125)
-texture = ExtResource("1_cs1y5")
-
-[node name="Sprite2" type="Sprite2D" parent="." unique_id=2114015861]
-modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(-1.1368684e-13, -1.4901161e-07)
-rotation = 1.5707964
-scale = Vector2(0.06249998, 0.031250004)
-texture = ExtResource("1_cs1y5")
-
-[node name="Sprite3" type="Sprite2D" parent="." unique_id=519571204]
-modulate = Color(0.9098039, 0, 0.48235294, 1)
-position = Vector2(23.999998, 1.2730541e-14)
-rotation = 1.5707964
-scale = Vector2(0.24, 0.085)
-texture = ExtResource("1_cs1y5")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1082749164]
+position = Vector2(22, 3.3333328)
+rotation = 0.7853982
+sprite_frames = SubResource("SpriteFrames_t75f4")
+frame = 3
+frame_progress = 1.0
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=1053033334]
-position = Vector2(24.125, 8.1343364e-07)
+position = Vector2(33.333336, -5.82819e-08)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_cs1y5")
-disabled = true
 
 [node name="Ataque" type="Timer" parent="." unique_id=1376458049]
 

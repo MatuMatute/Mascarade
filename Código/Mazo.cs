@@ -2,6 +2,8 @@ using Godot;
 
 public partial class Mazo : CharacterBody2D
 {
+	[Export]
+	private AnimatedSprite2D Sprite;
 	private CollisionShape2D Colision;
 	private Timer Temporizador;
 	private bool Habilitado;
@@ -19,6 +21,7 @@ public partial class Mazo : CharacterBody2D
 		{
 			LookAt(GetGlobalMousePosition());
 			Show();
+			Sprite.Play("default");
 			Colision.SetDeferred("disabled", false);
 			Habilitado = false;
 			Temporizador.Start();

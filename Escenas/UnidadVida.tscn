@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cjnx2wwvk23lj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0jut"]
+bg_color = Color(0.80696785, 0.03709064, 0.26275864, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Unidad" type="Panel" unique_id=1269419949]
+custom_minimum_size = Vector2(64, 64)
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")

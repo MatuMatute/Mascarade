@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ckyvjkdnq4u7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w57u4"]
+radius = 32.0
+
+[node name="Globo" type="Area2D" unique_id=1317180219]
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1289173067]
+shape = SubResource("CircleShape2D_w57u4")

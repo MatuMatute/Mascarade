@@ -11,7 +11,7 @@ public partial class AreaDialogoBoletero : AreaInteractuable
 		"Hola Mauro, no sabia que tenias turno hoy.",
 		"Cambio de ultimo momento",
 		"Acabo de venir del puesto de churros, preguntan si podés llevarles cambio",
-		"Estoy solo, ¡te molesta quedarte hasta que vuelva?",
+		"Estoy solo, ¿te molesta quedarte hasta que vuelva?",
 		"Dale, no hay problema."
 	];
 	

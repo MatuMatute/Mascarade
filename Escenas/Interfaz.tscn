@@ -311,17 +311,27 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
-[node name="Unidad" type="Panel" parent="MargenJuego/Vida" unique_id=257787820]
+[node name="Unidad" type="Panel" parent="MargenJuego/Vida" unique_id=1269419949]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
-[node name="Unidad2" type="Panel" parent="MargenJuego/Vida" unique_id=42642028]
+[node name="Unidad2" type="Panel" parent="MargenJuego/Vida" unique_id=1024017242]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
 
-[node name="Unidad3" type="Panel" parent="MargenJuego/Vida" unique_id=1015876561]
+[node name="Unidad3" type="Panel" parent="MargenJuego/Vida" unique_id=913636838]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
+
+[node name="Unidad4" type="Panel" parent="MargenJuego/Vida" unique_id=180903525]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
+
+[node name="Unidad5" type="Panel" parent="MargenJuego/Vida" unique_id=879263817]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h0jut")
@@ -398,7 +408,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Equipo" type="TextureRect" parent="." unique_id=1024840643]
 process_mode = 2
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -558,8 +567,9 @@ theme_override_constants/separation = 16
 layout_mode = 2
 text = "Somos Team Rosa Azul
 Arte 2D y Narrativa - Rocío Grudzien
-Arte 2D, Animación y Game Design - Florencia Juarez
-Programación y Game Design - Matías Nahuel González Sandoval
+Arte 2D, Animación - Florencia Juarez
+Programación - Matías Nahuel González Sandoval
+Todo el equipo aportó al Game Design
 Fuente de letra utilizada: Rouge Script"
 label_settings = ExtResource("3_wlqyy")
 horizontal_alignment = 1
@@ -583,7 +593,7 @@ offset_left = -40.0
 offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "0.3.5-máscara"
+text = "0.4.0-máscara"
 
 [node name="Animaciones" type="AnimationPlayer" parent="." unique_id=380158101]
 process_mode = 3

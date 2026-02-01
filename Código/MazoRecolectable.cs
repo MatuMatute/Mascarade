@@ -11,7 +11,7 @@ public partial class MazoRecolectable : Area2D
 
 	public void EntradaEntidad(Node2D Entidad)
 	{
-		if (Entidad is Protagonista)
+		if (Entidad is Protagonista && !Entidad.HasNode("Mazo"))
 		{
 			Entidad.CallDeferred("add_child", Mazo);
 			QueueFree();

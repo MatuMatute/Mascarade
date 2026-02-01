@@ -54,6 +54,11 @@ public partial class Nucleo : Node
 		Interfaz.MostrarVidas();
 	}
 
+	public void ActualizarContador()
+	{
+		Interfaz.ActualizarVidas();
+	}
+
 	private void IniciarPartida()
 	{
 		GetTree().Paused = false;

@@ -6,14 +6,14 @@ public partial class Guardia : CharacterBody2D
 	private StaticBody2D Pared;
 
 	private readonly string[] DialogosSinBoleto = [
-		"Disculpe señorita, ¡Puedo ver su boleto?",
+		"Disculpe señorita, ¿Puedo ver su boleto?",
 		"No tengo, pero trabajo acá",
 		"Lo lamento, pero no puedo dejarla entrar así, solo puede pasar libremente al evento en el que trabaja.",
 		"(Debo encontrar un boleto, la boletería está cerca de acá.)"
 	];
 
 	private readonly string[] DialogosConBoleto = [
-		"Disculpe señorita, ¡Puedo ver su boleto?",
+		"Disculpe señorita, ¿Puedo ver su boleto?",
 		"Tomá",
 		"Ahora podés pasar"
 	];
